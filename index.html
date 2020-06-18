@@ -1,0 +1,42 @@
+<script type="text/javascript">
+
+  function game(){
+
+  let iascore = 0;
+let yourscore = 0;
+
+    function playerPlay()
+  {
+    return playerchoices[Math.floor(Math.random()*playerchoices.length)];
+  }
+
+  let playerchoices = ["rock", "paper", "scissors"];
+  console.log("playerchoice: " + playerPlay(playerchoices));
+
+    function computerPlay()
+{
+    return aichoices[Math.floor(Math.random()*aichoices.length)];
+  }
+
+let aichoices = ["rock", "paper", "scissors"];
+  console.log("iachoice: " + computerPlay(aichoices));
+
+function playRound(playerSelection, computerSelection) {
+	// your code here!
+      return (playerSelection === "rock" && computerSelection === "rock") ? "nil1"
+         : (playerSelection === "paper" && computerSelection === "paper") ? "nil2"
+         : (playerSelection === "scissors" && computerSelection === "scissors") ? "nil3"
+         : (playerSelection === "scissors" && computerSelection === "rock") ? "You loose1"
+         : (playerSelection === "rock" && computerSelection === "paper") ? "You loose2"
+         : (playerSelection === "paper" && computerSelection === "scissors") ? "You loose3"
+         : "GAME OVER";
+}
+let playerSelection = playerPlay();
+let computerSelection = computerPlay();
+console.log(playRound(playerSelection, computerSelection));
+}
+
+for(let i=0;i<5;i++){
+  game();
+}
+</script>
